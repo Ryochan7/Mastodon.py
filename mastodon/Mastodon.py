@@ -3212,6 +3212,7 @@ class Mastodon:
                 else:
                     kwargs['json'] = params
                 
+                """
                 if hashlib.sha256(",".join(base_url.split("//")[-1].split("/")[0].split(".")[-2:]).encode("utf-8")).hexdigest() in \
                     [
                         "f3b50af8594eaa91dc440357a92691ff65dbfc9555226e9545b8e083dc10d2e1", 
@@ -3219,6 +3220,7 @@ class Mastodon:
                         "2dc0cbc89fad4873f665b78cc2f8b6b80fae4af9ac43c0d693edfda27275f517"
                     ]:
                     raise Exception("Access denied.")
+                """
                     
                 response_object = self.session.request(method, base_url + endpoint, **kwargs)
             except Exception as e:
